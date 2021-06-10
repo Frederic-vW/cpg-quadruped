@@ -1,4 +1,4 @@
-# cpg-quadruped
+# Central Pattern Generator (CPG) model for quadruped locomotion
 
 Computational model of a *Central Pattern Generator (CPG)* using 8 coupled neurons based on the Morris-Lecar model.  
 [1] Buono L and Golubitsky M, "Models of central pattern generators for quadruped locomotion I. Primary Gaits". J. Math. Biol. 42, 291--326 (2001)  
