@@ -10,7 +10,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import matplotlib.animation as animation
-from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation, PillowWriter
 from scipy.interpolate import interp1d
 from scipy.signal import morlet2, cwt
 #from scipy.signal import correlate #, medfilt
@@ -1294,7 +1294,8 @@ def ml8(gL=0.6, VL=-1.8, gCa=3, VCa=1, gK=1.8, VK=-0.8, C=1, I_ext=1.0,
         """
         make movie
         """
-        movname = f"cpg_quad_{mode:s}.mp4"
+        #movname = f"cpg_quad_{mode:s}.mp4"
+        movname = f"cpg_quad_{mode:s}.gif"
         print(f"[+] Animate data as movie: {movname:s}")
         loc = {
             "LF" : (50,100),
@@ -1345,7 +1346,8 @@ def ml8(gL=0.6, VL=-1.8, gCa=3, VCa=1, gK=1.8, VK=-0.8, C=1, I_ext=1.0,
         # make animation
         n_interp = len(data['LF'])
         ani = FuncAnimation(fig, update, interval=50, save_count=n_interp)
-        ani.save(movname)
+        #ani.save(movname)
+        ani.save(movname, writer=PillowWriter(fps=24))
         plt.show()
         print("Animation created and saved.")
 
